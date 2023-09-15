@@ -8,15 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-	WebDriver lDriver;
+  public WebDriver lDriver;
 
 	@FindBy(name = "uid")
 	@CacheLookup
 	WebElement userID;
 
-	@FindBy(name = "password")
+	@FindBy(xpath ="//input[@name='password']")
 	@CacheLookup
-	WebElement password;
+	WebElement password12;
 
 	@FindBy(name = "btnLogin")
 	@CacheLookup
@@ -35,8 +35,8 @@ public class LoginPage {
 		userID.sendKeys(name);
 	}
 
-	public void setPassword(String password1) {
-		password.sendKeys(password1);
+	public void setPassword(CharSequence password1) {
+		password12.sendKeys(password1);
 	}
 
 	public void clickSubmit() {
